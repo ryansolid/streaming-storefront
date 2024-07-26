@@ -3,13 +3,14 @@ import { createAsync } from "@solidjs/router";
 import { Pricing } from "~/components/pricing";
 import type { Product } from "~/types/product";
 import { ProductRating } from "~/components/product-rating";
-import { Show, createRenderEffect } from "solid-js";
+import { Show } from "solid-js";
 import { fetchSingleProduct } from "~/lib/prefetched";
+import { Image, ImageSmall } from "./image";
 
 export function SingleProduct() {
-  const product = createAsync<Product>(() =>
-    fetchSingleProduct(1)
-  , { deferStream: true });
+  const product = createAsync<Product>(() => fetchSingleProduct(1), {
+    deferStream: true,
+  });
 
   return (
     <Show when={product()}>
@@ -17,40 +18,34 @@ export function SingleProduct() {
         <div class="col-span-2 md:order-1 md:col-span-1">
           <div class="space-y-2">
             <div class="relative aspect-square">
-              <img
+              <Image
                 src={`/${product()!.image}`}
                 class="block rounded-lg grayscale"
                 alt={product()!.name}
-                sizes="(min-width: 1184px) 200px, (min-width: 1024px) 20vw, (min-width: 768px) 25vw, 50vw"
+                loading="eager"
               />
             </div>
 
             <div class="flex gap-x-2">
               <div class="relative aspect-square w-1/3">
-                <img
+                <ImageSmall
                   src={`/${product()!.image}`}
                   class="rounded-lg grayscale"
                   alt={product()!.name}
-                  sizes="(min-width: 1184px) 75px, (min-width: 768px) 8.33vw, 16.66vw"
-                  loading="lazy"
                 />
               </div>
               <div class="relative aspect-square w-1/3">
-                <img
+                <ImageSmall
                   src={`/${product()!.image}`}
                   class="rounded-lg grayscale"
                   alt={product()!.name}
-                  sizes="(min-width: 1184px) 75px, (min-width: 768px) 8.33vw, 16.66vw"
-                  loading="lazy"
                 />
               </div>
               <div class="relative aspect-square w-1/3">
-                <img
+                <ImageSmall
                   src={`/${product()!.image}`}
                   class="rounded-lg grayscale"
                   alt={product()!.name}
-                  sizes="(min-width: 1184px) 75px, (min-width: 768px) 8.33vw, 16.66vw"
-                  loading="lazy"
                 />
               </div>
             </div>

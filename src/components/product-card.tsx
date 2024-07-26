@@ -5,6 +5,7 @@ import { ProductPrice } from "~/components/product-price";
 import { ProductRating } from "~/components/product-rating";
 import { ProductUsedPrice } from "~/components/product-used-price";
 import { dinero, type DineroSnapshot } from "dinero.js";
+import { Image } from "./image";
 
 export const ProductCard = ({ product }: { product: Product }) => {
   const price = dinero(product.price as DineroSnapshot<number>);
@@ -20,11 +21,11 @@ export const ProductCard = ({ product }: { product: Product }) => {
               </div>
             </div>
           ) : null}
-          <img
-            src={`/${product.image}`}
-            sizes="(min-width: 1184px) 200px, (min-width: 1024px) 20vw, (min-width: 768px) 25vw, 50vw"
+          <Image
+            src={product.image!}
             class="rounded-xl grayscale group-hover:opacity-80"
             alt={product.name}
+            loading="lazy"
           />
         </div>
 

@@ -10,6 +10,8 @@ function CartCountFromCookies() {
   return <CartCount initialCartCount={0} />;
 }
 
+const IMG_URL = "https://www.partialprerendering.com/_next/image"
+
 export function Header() {
   return (
     <div class="flex items-center justify-between gap-x-3 rounded-lg bg-gray-800 px-3 py-3 lg:px-5 lg:py-4">
@@ -44,11 +46,15 @@ export function Header() {
         </div>
 
         <img
-          src="/prince-akachi-LWkFHEGpleE-unsplash.jpg"
-          class="rounded-full"
-          width={40}
-          height={40}
           alt="User"
+          width="40"
+          height="40"
+          decoding="async"
+          data-nimg="1"
+          class="rounded-full"
+          style="color:transparent"
+          srcset={`${IMG_URL}?url=%2Fprince-akachi-LWkFHEGpleE-unsplash.jpg&amp;w=48&amp;q=75 1x, ${IMG_URL}?url=%2Fprince-akachi-LWkFHEGpleE-unsplash.jpg&amp;w=96&amp;q=75 2x`}
+          src={`${IMG_URL}?url=%2Fprince-akachi-LWkFHEGpleE-unsplash.jpg&amp;w=96&amp;q=75`}
         />
       </div>
     </div>

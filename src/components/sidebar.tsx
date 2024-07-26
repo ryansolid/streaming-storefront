@@ -30,7 +30,7 @@ export function Sidebar() {
       <button
         type="button"
         class="group absolute right-0 top-0 flex h-14 items-center gap-x-2 px-4 lg:hidden"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => setIsOpen(!isOpen())}
       >
         <div class="font-medium text-gray-100 group-hover:text-gray-400">
           Menu
@@ -46,7 +46,7 @@ export function Sidebar() {
         classList={{
           'overflow-y-auto lg:static lg:block': true,
           'fixed inset-x-0 bottom-0 top-14 mt-px bg-black': isOpen(),
-          hidden: !isOpen,
+          hidden: !isOpen(),
         }}
       >
         <div class="prose prose-sm prose-invert max-w-none space-y-6 px-4 pb-20 text-gray-300">
