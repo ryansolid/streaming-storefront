@@ -53,8 +53,7 @@ export function Header() {
           data-nimg="1"
           class="rounded-full"
           style="color:transparent"
-          srcset={`${IMG_URL}?url=%2Fprince-akachi-LWkFHEGpleE-unsplash.jpg&amp;w=48&amp;q=75 1x, ${IMG_URL}?url=%2Fprince-akachi-LWkFHEGpleE-unsplash.jpg&amp;w=96&amp;q=75 2x`}
-          src={`${IMG_URL}?url=%2Fprince-akachi-LWkFHEGpleE-unsplash.jpg&amp;w=96&amp;q=75`}
+          src="/prince-akachi-small.webp"
         />
       </div>
     </div>

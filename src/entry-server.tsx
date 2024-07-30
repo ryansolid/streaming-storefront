@@ -3,12 +3,17 @@ import { GlobalStyles } from "./styles";
 import { createHandler, StartServer } from "@solidjs/start/server";
 
 const ImagePreload = () => {
-  return <link
-    rel="preload"
-    as="image"
-    imagesrcset="/eniko/128.webp 128w, /eniko/256.webp 256w, /eniko/384.webp 384w, /eniko/640.webp 640w, /eniko/750.webp 750w, /eniko/800.webp 3840w"
-    imagesizes="(min-width: 1184px) 200px, (min-width: 1024px) 20vw, (min-width: 768px) 25vw, 50vw"
-  />;
+  return (
+    <>
+      <link
+        rel="preload"
+        as="image"
+        imagesrcset="/eniko/128.webp 128w, /eniko/256.webp 256w, /eniko/384.webp 384w, /eniko/640.webp 640w, /eniko/750.webp 750w, /eniko/800.webp 3840w"
+        imagesizes="(min-width: 1184px) 200px, (min-width: 1024px) 20vw, (min-width: 768px) 25vw, 50vw"
+      />
+      <link rel="preload" as="image" href="/prince-akachi-small.webp" />
+    </>
+  );
 };
 
 export default createHandler(() => (
